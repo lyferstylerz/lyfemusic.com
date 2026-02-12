@@ -691,3 +691,342 @@ h1 {
 .track-item:nth-child(3) { animation-delay: 0.3s; opacity: 0; }
 .track-item:nth-child(4) { animation-delay: 0.4s; opacity: 0; }
 .track-item:nth-child(5) { animation-delay: 0.5s; opacity: 0; }
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+/* Tablets and smaller laptops (portrait) */
+@media screen and (max-width: 1024px) {
+  .page {
+    padding: 0 5%;
+  }
+  
+  .audio-player,
+  .tracklist {
+    max-width: 100%;
+  }
+}
+
+/* Mobile devices (landscape and portrait) */
+@media screen and (max-width: 768px) {
+  /* NAVIGATION */
+  .top-nav {
+    top: 20px;
+    left: 3%;
+  }
+  
+  .drop-btn {
+    font-size: 1rem;
+  }
+  
+  .dropdown-content a {
+    font-size: 0.95rem;
+    padding: 10px 0;
+  }
+  
+  /* LOGO */
+  .logo-container {
+    top: 20px;
+  }
+  
+  .logo-img {
+    width: 180px;
+  }
+  
+  /* PAGE CONTENT */
+  .page {
+    padding: 0 4%;
+  }
+  
+  /* HEADINGS */
+  h1 {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    margin-top: 15px;
+  }
+  
+  /* ALBUM COVERS */
+  .album-display,
+  .home-cover {
+    max-width: 320px;
+    margin-top: 30px;
+  }
+  
+  /* AUDIO PLAYER */
+  .audio-player {
+    padding: 20px 15px;
+    margin-top: 30px;
+  }
+  
+  .player-album-cover {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .current-track-name {
+    font-size: 0.95rem;
+  }
+  
+  /* PLAYER CONTROLS */
+  .player-controls {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .control-btn {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .shuffle-btn,
+  .repeat-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .play-btn {
+    width: 55px;
+    height: 55px;
+  }
+  
+  /* PROGRESS BAR */
+  .progress-container {
+    gap: 8px;
+  }
+  
+  .time-current,
+  .time-total {
+    font-size: 0.75rem;
+    min-width: 35px;
+  }
+  
+  .progress-bar {
+    height: 8px;
+  }
+  
+  .progress-bar:hover {
+    height: 8px;
+  }
+  
+  /* VOLUME CONTROL */
+  .volume-container {
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+  
+  .volume-btn {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .volume-bar {
+    height: 8px;
+  }
+  
+  .volume-bar:hover {
+    height: 8px;
+  }
+  
+  .volume-percent {
+    font-size: 0.75rem;
+    min-width: 40px;
+  }
+  
+  /* TRACKLIST */
+  .tracklist {
+    margin-top: 20px;
+    padding: 15px 0;
+  }
+  
+  .track-item {
+    padding: 15px 12px;
+    margin: 6px 0;
+  }
+  
+  .track-number {
+    font-size: 0.85rem;
+    min-width: 30px;
+  }
+  
+  .track-name {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    margin: 0 10px;
+  }
+  
+  .track-item:hover .track-name {
+    letter-spacing: 1px;
+  }
+  
+  .track-duration {
+    font-size: 0.8rem;
+    margin-right: 8px;
+  }
+}
+
+/* Small mobile devices (portrait) */
+@media screen and (max-width: 480px) {
+  /* NAVIGATION */
+  .drop-btn {
+    font-size: 0.9rem;
+  }
+  
+  .dropdown-content {
+    min-width: 160px;
+  }
+  
+  .dropdown-content a {
+    font-size: 0.85rem;
+    padding: 8px 0;
+  }
+  
+  /* LOGO */
+  .logo-img {
+    width: 150px;
+  }
+  
+  /* HEADINGS */
+  h1 {
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+  
+  /* ALBUM COVERS */
+  .album-display,
+  .home-cover {
+    max-width: 280px;
+    margin-top: 25px;
+  }
+  
+  /* AUDIO PLAYER */
+  .audio-player {
+    padding: 15px 12px;
+  }
+  
+  .player-album-cover {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+  }
+  
+  .now-playing {
+    font-size: 0.65rem;
+  }
+  
+  .current-track-name {
+    font-size: 0.85rem;
+  }
+  
+  /* PLAYER CONTROLS */
+  .player-controls {
+    gap: 8px;
+  }
+  
+  .control-btn {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .control-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .shuffle-btn,
+  .repeat-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .shuffle-btn svg,
+  .repeat-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .play-btn {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .play-btn svg {
+    width: 26px;
+    height: 26px;
+  }
+  
+  /* PROGRESS BAR */
+  .time-current,
+  .time-total {
+    font-size: 0.7rem;
+    min-width: 32px;
+  }
+  
+  /* VOLUME CONTROL */
+  .volume-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .volume-slider {
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* TRACKLIST */
+  .track-item {
+    padding: 12px 10px;
+  }
+  
+  .track-number {
+    font-size: 0.75rem;
+    min-width: 25px;
+  }
+  
+  .track-name {
+    font-size: 0.75rem;
+    letter-spacing: 0.3px;
+    margin: 0 8px;
+  }
+  
+  .track-item:hover .track-name {
+    letter-spacing: 0.5px;
+  }
+  
+  .track-duration {
+    font-size: 0.7rem;
+    margin-right: 6px;
+  }
+  
+  .play-indicator {
+    font-size: 0.7rem;
+  }
+  
+  /* DISABLE HOVER TRANSFORM ON MOBILE (Better performance) */
+  .track-item:hover {
+    transform: none;
+  }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 360px) {
+  .logo-img {
+    width: 130px;
+  }
+  
+  h1 {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  
+  .album-display,
+  .home-cover {
+    max-width: 240px;
+  }
+  
+  .track-name {
+    font-size: 0.7rem;
+  }
+}
