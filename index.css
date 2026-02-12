@@ -1,0 +1,693 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  /* Removed the heavy padding here so content can reach the top */
+}
+
+/* FIXED BACKGROUND */
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("adl3.jpg");
+  background-size: cover;
+  background-position: 20% center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* LOGO POSITIONING */
+.logo-container {
+  top: 30px;           /* same as dropdown top */
+  left: 50%;           /* center horizontally */
+  z-index: 10;         /* above background */
+
+}
+
+.logo-img {
+  width: 250px;
+  height: auto;
+  mix-blend-mode: lighten;
+  filter: brightness(1.8);
+  color: #fffb00;
+  fill: #fffb00;
+}
+
+/* CONTENT THAT SCROLLS */
+.page {
+  min-height: 300vh;
+  padding: 0 10%; /* Removed top padding to let the logo-container control the height */
+  text-align: center;
+}
+
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  
+  /* MAX BOLD */
+  font-weight: 800; 
+  text-transform: uppercase;
+  
+  /* SMALL BUT MIGHTY SIZE */
+  font-size: 1.5rem; 
+  
+  /* TIGHT BUT CLEAN SPACING */
+  letter-spacing: 6px; 
+  
+  /* REMOVE TRANSPARENCY FOR MAX IMPACT */
+  opacity: 1;
+  color: #fffb00;
+  
+  margin-top: 5px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.spacer {
+  height: 100vh;
+}
+/* POSITION THE NAV AT TOP LEFT */
+.top-nav {
+  position: absolute;
+  top: 30px;
+  left: 5%;
+  z-index: 10;
+}
+
+/* THE BUTTON */
+.drop-btn {
+ background: none;
+  border: none;
+  color: #fffb00; 
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.2rem;
+  padding: 0; /* Clears the gap */
+  text-transform: uppercase;
+}
+
+.drop-btn:hover {
+  opacity: 0.8;
+  filter: brightness(1.2);
+}
+
+/* THE DROPDOWN CONTAINER - NO BOX */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: none; /* Removed the background */
+  min-width: 200px;
+  margin-top: 5px;
+  border: none;     /* Removed the border */
+}
+
+/* THE LINKS - FLOATING TEXT */
+.dropdown-content a {
+  display: block;
+color: #fffb00;
+  padding: 12px 0; /* 0 on the left keeps it flush with 'COLLECTION' */
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem; 
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+/* HOVER EFFECT - TURNS GREEN AND SLIDES */
+.dropdown-content a:hover {
+color: #fffb00;
+  opacity: 1;
+}
+
+/* SHOW ON HOVER */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* HOVER EFFECT ON OPTIONS */
+.dropdown-content a:hover {
+  background-color: rgba(0, 255, 65, 0.1); /* Very faint green bg */
+  color: #fffb00; /* TEXT TURNS GREEN ON HOVER */
+  padding-left: 20px; /* Subtle "slide" effect when you hover */
+}
+
+/* SHOW ON HOVER */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+
+
+
+/* 1. HIDE ALL SECTIONS BY DEFAULT */
+.content-section {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* 2. SHOW HOME BY DEFAULT (When no ID is in URL) */
+#home {
+  display: flex;
+}
+
+/* 3. SHOW THE ACTIVE TARGET AND HIDE HOME */
+:target {
+  display: flex !important;
+}
+
+:target ~ #home {
+  display: none;
+}
+
+/* 4. THE ARROW FLIP (When hovering collection) */
+.dropdown:hover .arrow {
+  display: inline-block;
+  transform: rotate(180deg);
+  color: #fffb00;
+}
+
+/* 5. THE ALBUM IMAGE STYLE */
+.album-display {
+  width: 100%;
+  max-width: 450px; /* Adjust for that perfect balance */
+  height: auto;
+  margin-top: 40px;
+  /* Add that slight shadow from the video */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* 6. TEXT STYLE CONSISTENCY */
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  color: #fffb00;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+
+
+/* ============================================
+   AUDIO PLAYER STYLES - PREMIUM PLAYER
+   ============================================ */
+
+.audio-player {
+  width: 2000%;
+  max-width: 1150px;
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 251, 0, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* PLAYER ALBUM COVER */
+.player-album-cover {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 25px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.player-album-cover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 35px rgba(255, 251, 0, 0.3);
+}
+
+.player-album-cover:active {
+  transform: scale(0.95);
+}
+
+.player-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+
+.player-album-cover:hover .player-cover-img {
+  filter: brightness(0.7);
+}
+.album-display {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  margin-top: 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+/* HOME COVER - CLICKABLE */
+.home-cover-link {
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.home-cover-link:hover {
+  transform: scale(1.05);
+}
+
+.home-cover {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  margin-top: 80px;
+  border-radius: 18px;
+}
+
+/* COVER OVERLAY WITH PLAY ICON */
+
+
+.player-album-cover:hover .cover-overlay {
+  opacity: 1;
+}
+
+.cover-play-icon {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  animation: gentlePulse 2s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.player-info {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.now-playing {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #fffb00;
+  opacity: 0.6;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.current-track-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fffb00;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.player-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.control-btn {
+  background: none;
+  border: 2px solid rgba(255, 251, 0, 0.3);
+  color: #fffb00;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.6;
+}
+
+.control-btn:hover {
+  background: rgba(255, 251, 0, 0.1);
+  border-color: #fffb00;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 251, 0, 0.3);
+  opacity: 1;
+}
+
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+/* ACTIVE STATE FOR SHUFFLE/REPEAT */
+.control-btn.active {
+  background: rgba(255, 251, 0, 0.15);
+  border-color: #fffb00;
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(255, 251, 0, 0.4);
+}
+
+.shuffle-btn,
+.repeat-btn {
+  width: 45px;
+  height: 45px;
+}
+
+.play-btn {
+  width: 65px;
+  height: 65px;
+  border-width: 3px;
+  opacity: 1;
+}
+
+.play-btn:hover {
+  box-shadow: 0 0 30px rgba(255, 251, 0, 0.5);
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.time-current,
+.time-total {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fffb00;
+  opacity: 0.7;
+  min-width: 40px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 251, 0, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.progress-bar:hover {
+  background: rgba(255, 251, 0, 0.25);
+  height: 8px;
+  transition: height 0.2s ease;
+}
+
+.progress-bar:active {
+  cursor: grabbing;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fffb00, #ffed4e);
+  width: 0%;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(255, 251, 0, 0.5);
+}
+
+/* ============================================
+   VOLUME CONTROL STYLES
+   ============================================ */
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 251, 0, 0.1);
+}
+
+.volume-btn {
+  background: none;
+  border: none;
+  color: #fffb00;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.volume-btn:hover {
+  background: rgba(255, 251, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.volume-btn:active {
+  transform: scale(0.95);
+}
+
+.volume-slider {
+  flex: 1;
+}
+
+.volume-bar {
+  height: 6px;
+  background: rgba(255, 251, 0, 0.15);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.volume-bar:hover {
+  background: rgba(255, 251, 0, 0.25);
+  height: 8px;
+  transition: height 0.2s ease;
+}
+
+.volume-bar:active {
+  cursor: grabbing;
+}
+
+.volume-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fffb00, #ffed4e);
+  width: 100%;
+  transition: width 0.1s ease;
+  box-shadow: 0 0 8px rgba(255, 251, 0, 0.4);
+}
+
+.volume-percent {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #fffb00;
+  opacity: 0.7;
+  min-width: 45px;
+  text-align: right;
+}
+
+/* ============================================
+   TRACKLIST STYLES - SMOOTH & PREMIUM
+   ============================================ */
+
+.tracklist {
+  width: 2000%;
+  max-width: 1150px;
+  margin-top: 30px;
+  padding: 20px 0;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(255, 251, 0, 0.03);
+  border: 1px solid rgba(255, 251, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* GLOWING BACKGROUND EFFECT ON HOVER */
+.track-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 251, 0, 0.15), 
+    transparent
+  );
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.track-item:hover::before {
+  left: 100%;
+}
+
+.track-item:hover {
+  background: rgba(255, 251, 0, 0.08);
+  border-color: rgba(255, 251, 0, 0.3);
+  transform: translateX(8px);
+  box-shadow: 0 8px 25px rgba(255, 251, 0, 0.15);
+}
+
+/* ACTIVE TRACK (CURRENTLY PLAYING) */
+.track-item.active {
+  background: rgba(255, 251, 0, 0.12);
+  border-color: rgba(255, 251, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(255, 251, 0, 0.2);
+}
+
+.track-item.active .track-number,
+.track-item.active .track-name,
+.track-item.active .track-duration {
+  color: #fffb00;
+  opacity: 1;
+}
+
+.track-item.active .play-indicator {
+  opacity: 1;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* TRACK NUMBER */
+.track-number {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #fffb00;
+  opacity: 0.5;
+  min-width: 35px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.track-item:hover .track-number {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* TRACK NAME */
+.track-name {
+  flex: 1;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 15px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.track-item:hover .track-name {
+  color: #fffb00;
+  letter-spacing: 2px;
+}
+
+/* TRACK DURATION */
+.track-duration {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ffffff;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.track-item:hover .track-duration {
+  opacity: 1;
+  color: #fffb00;
+}
+
+/* PLAY INDICATOR */
+.play-indicator {
+  font-size: 0.8rem;
+  color: #fffb00;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.track-item:hover .play-indicator {
+  opacity: 0.6;
+}
+
+/* PULSE ANIMATION FOR ACTIVE TRACK */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+/* ACTIVE/PLAYING STATE */
+.track-item:active {
+  transform: translateX(8px) scale(0.98);
+  background: rgba(255, 251, 0, 0.12);
+}
+
+/* SMOOTH ENTRANCE ANIMATION */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.track-item {
+  animation: slideIn 0.5s ease forwards;
+}
+
+.track-item:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
+.track-item:nth-child(2) { animation-delay: 0.2s; opacity: 0; }
+.track-item:nth-child(3) { animation-delay: 0.3s; opacity: 0; }
+.track-item:nth-child(4) { animation-delay: 0.4s; opacity: 0; }
+.track-item:nth-child(5) { animation-delay: 0.5s; opacity: 0; }

@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A Dangerous Love</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- FIXED BACKGROUND -->
+  <div class="bg"></div>
+
+  <div class="page">
+  <div class="logo-container">
+    <nav class="top-nav">
+      <div class="dropdown">
+        <button class="drop-btn">COLLECTION <span class="arrow">▾</span></button>
+        <div class="dropdown-content">
+          <a href="#digital">DIGITAL ALBUM</a>
+          <a href="#house">HOUSE EDITION</a>
+          <a href="#3093">3093 EDITION</a>
+        </div>
+      </div>
+    </nav>
+    <div class="logo-container">
+  <a href="#home" class="logo-home-btn" id="logoHomeBtn">
+    <img src="KYFESHIT.png" alt="Corp Logo" class="logo-img">
+  </a>
+</div>
+  </div>
+
+  <div id="home" class="content-section">
+    <h1>A DANGEROUS LOVE</h1>
+    <a href="#digital" class="home-cover-link">
+      <img src="ADLCOVER.jpg" alt="Cover" class="album-display home-cover">
+    </a>
+    </div>
+
+    
+  <div id="digital" class="content-section">
+    <h1>DIGITAL ALBUM</h1>
+    
+    <!-- AUDIO PLAYER -->
+    <div class="audio-player">
+      <!-- ALBUM COVER THUMBNAIL -->
+      <div class="player-album-cover">
+        <img src="ADLCOVER.jpg" alt="Album Cover" class="player-cover-img" id="playerCoverImg">
+        <div class="cover-overlay">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="cover-play-icon">
+            <circle cx="12" cy="12" r="10" fill="rgba(255, 251, 0, 0.2)" stroke="#fffb00" stroke-width="2"/>
+            <path d="M10 8L16 12L10 16V8Z" fill="#fffb00"/>
+          </svg>
+        </div>
+      </div>
+      
+      <div class="player-info">
+        <div class="now-playing">NOW PLAYING</div>
+        <div class="current-track-name">SELECT A TRACK</div>
+      </div>
+      
+      <div class="player-controls">
+        <button class="control-btn shuffle-btn" id="shuffleBtn" title="Shuffle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M16 3H21V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 20L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 16V21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15 15L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 4L9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        
+        <button class="control-btn" id="prevBtn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M19 20L9 12L19 4V20Z" fill="currentColor"/>
+            <path d="M7 4H5V20H7V4Z" fill="currentColor"/>
+          </svg>
+        </button>
+        
+        <button class="control-btn play-btn" id="playBtn">
+          <svg class="play-icon" width="32" height="32" viewBox="0 0 24 24" fill="none">
+            <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+          </svg>
+          <svg class="pause-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" style="display: none;">
+            <path d="M6 4H10V20H6V4Z" fill="currentColor"/>
+            <path d="M14 4H18V20H14V4Z" fill="currentColor"/>
+          </svg>
+        </button>
+        
+        <button class="control-btn" id="nextBtn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 4L15 12L5 20V4Z" fill="currentColor"/>
+            <path d="M17 4H19V20H17V4Z" fill="currentColor"/>
+          </svg>
+        </button>
+        
+        <button class="control-btn repeat-btn" id="repeatBtn" title="Repeat Off">
+          <svg class="repeat-off" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M17 1L21 5L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 11V9C3 7.93913 3.42143 6.92172 4.17157 6.17157C4.92172 5.42143 5.93913 5 7 5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 23L3 19L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 13V15C21 16.0609 20.5786 17.0783 19.8284 17.8284C19.0783 18.5786 18.0609 19 17 19H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="repeat-all" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+            <path d="M17 1L21 5L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 11V9C3 7.93913 3.42143 6.92172 4.17157 6.17157C4.92172 5.42143 5.93913 5 7 5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 23L3 19L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 13V15C21 16.0609 20.5786 17.0783 19.8284 17.8284C19.0783 18.5786 18.0609 19 17 19H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="repeat-one" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+            <path d="M17 1L21 5L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 11V9C3 7.93913 3.42143 6.92172 4.17157 6.17157C4.92172 5.42143 5.93913 5 7 5H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 23L3 19L7 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 13V15C21 16.0609 20.5786 17.0783 19.8284 17.8284C19.0783 18.5786 18.0609 19 17 19H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="12" y="15" text-anchor="middle" fill="currentColor" font-size="10" font-weight="bold">1</text>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="progress-container">
+        <span class="time-current">0:00</span>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <span class="time-total">0:00</span>
+      </div>
+      
+      <!-- VOLUME CONTROL -->
+      <div class="volume-container">
+        <button class="volume-btn" id="volumeBtn">
+          <svg class="volume-high" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M11 5L6 9H2V15H6L11 19V5Z" fill="currentColor"/>
+            <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M18.36 5.64C20.0914 7.37138 21.0623 9.6887 21.0623 12.1C21.0623 14.5113 20.0914 16.8286 18.36 18.56" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg class="volume-low" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+            <path d="M11 5L6 9H2V15H6L11 19V5Z" fill="currentColor"/>
+            <path d="M15.54 8.46C16.4774 9.39764 17.0039 10.6692 17.0039 11.995C17.0039 13.3208 16.4774 14.5924 15.54 15.53" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg class="volume-mute" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+            <path d="M11 5L6 9H2V15H6L11 19V5Z" fill="currentColor"/>
+            <path d="M23 9L17 15M17 9L23 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="volume-slider">
+          <div class="volume-bar">
+            <div class="volume-fill"></div>
+          </div>
+        </div>
+        <span class="volume-percent">100%</span>
+      </div>
+    </div>
+    
+    <!-- TRACKLIST -->
+    <div class="tracklist">
+      <div class="track-item" data-track="0" data-src="all day v1 prod.yeat, duli0, lyfe, geogetbands, 1CE.mp3">
+        <span class="track-number">1</span>
+        <span class="track-name">ALL DAY</span>
+        <span class="track-duration">4:29</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="1" data-src="cant love me v3 prod. lyfe, duli0, neile.mp3">
+        <span class="track-number">2</span>
+        <span class="track-name">CAN'T LOVE MË</span>
+        <span class="track-duration">3:05</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="2" data-src="all of us v4 prod. lyfe, sapjer, synthetic.mp3">
+        <span class="track-number">3</span>
+        <span class="track-name">ALL OF US</span>
+        <span class="track-duration">3:21</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="3" data-src="push 2 far v3 prod. lyfe, lukovic.mp3">
+        <span class="track-number">4</span>
+        <span class="track-name">PUSH 2 FAR</span>
+        <span class="track-duration">2:12</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="dont believe anybody.mp3">
+        <span class="track-number">5</span>
+        <span class="track-name">DON'T BELIEVË ANYBODY</span>
+        <span class="track-duration">3:29</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="days go bye (mp3cut.net).mp3">
+        <span class="track-number">6</span>
+        <span class="track-name">DAYZ GO BYË</span>
+        <span class="track-duration">4:43</span>
+        <span class="play-indicator">▶</span>
+      </div>
+       <div class="track-item" data-track="4" data-src="7777 prod. who.ice, lyfe, venny (mp3cut.net).mp3">
+        <span class="track-number">7</span>
+        <span class="track-name">7777</span>
+        <span class="track-duration">2:48</span>
+        <span class="play-indicator">▶</span>
+      </div>
+       <div class="track-item" data-track="4" data-src="dont go v2 open synth (mp3cut.net).mp3">
+        <span class="track-number">8</span>
+        <span class="track-name">PLZ DON'T GO</span>
+        <span class="track-duration">3:05</span>
+        <span class="play-indicator">▶</span>
+      </div>
+       <div class="track-item" data-track="4" data-src="lyfe world prod. lyfe, synthetic.mp3">
+        <span class="track-number">9</span>
+        <span class="track-name">LYFE WORLD</span>
+        <span class="track-duration">2:46</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="seoul party v2 prod. lyfe, synthetic, yeat.mp3">
+        <span class="track-number">10</span>
+        <span class="track-name">SEOUL PARTY</span>
+        <span class="track-duration">2:46</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="everything prod. lyfe.mp3">
+        <span class="track-number">11</span>
+        <span class="track-name">EVERYTHING</span>
+        <span class="track-duration">4:18</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="feelin em v3 prod. bnyx, lyfe.mp3">
+        <span class="track-number">12</span>
+        <span class="track-name">FEELIN ËM</span>
+        <span class="track-duration">2:05</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="without ya prod. lyfe, sapjer.mp3">
+        <span class="track-number">13</span>
+        <span class="track-name">WITHOUT YA</span>
+        <span class="track-duration">4:34</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="first love prod. v2 lyfe, sapjer.mp3">
+        <span class="track-number">14</span>
+        <span class="track-name">FIRST LOVË</span>
+        <span class="track-duration">2:40</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="condo onda moon v2 prod. lyfe, duli0.mp3">
+        <span class="track-number">15</span>
+        <span class="track-name">CONDO ONDA MOON</span>
+        <span class="track-duration">2:27</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="lets crash out prd sapjer, lyfe (mp3cut.net).mp3">
+        <span class="track-number">16</span>
+        <span class="track-name">LET'S CRASH OUT</span>
+        <span class="track-duration">2:18</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="sympathy v1 prod. duli0, lyfe.mp3">
+        <span class="track-number">17</span>
+        <span class="track-name">SYMPATHY</span>
+        <span class="track-duration">2:32</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="let it all burn prod. lyfe, sapjer (mp3cut.net).mp3">
+        <span class="track-number">18</span>
+        <span class="track-name">LET IT ALL BURN</span>
+        <span class="track-duration">3:20</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="all alone prod. yeat, lyfe, sapjer.mp3">
+        <span class="track-number">19</span>
+        <span class="track-name">ALL ALONË</span>
+        <span class="track-duration">4:49</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="circle bak prod. duli0, lyfe.mp3">
+        <span class="track-number">20</span>
+        <span class="track-name">CIRCLE BAK</span>
+        <span class="track-duration">3:21</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="hurricaine katrina prod. lyfe, synthetic, sb.mp3">
+        <span class="track-number">21</span>
+        <span class="track-name">HURRICANË KATRINA</span>
+        <span class="track-duration">3:36</span>
+        <span class="play-indicator">▶</span>
+      </div>
+      <div class="track-item" data-track="4" data-src="suck my dih please v1 prod. lyfe.mp3">
+        <span class="track-number">22</span>
+        <span class="track-name">SUCK MY DIH PLEASE</span>
+        <span class="track-duration">3:05</span>
+        <span class="play-indicator">▶</span>
+      </div>
+    </div>
+    
+    <!-- HIDDEN AUDIO ELEMENT -->
+    <audio id="audioPlayer"></audio>
+  </div>
+
+  <div id="house" class="content-section">
+    <h1>HOUSE EDITION</h1>
+    <img src="HOUSECOVER.jpg" alt="Cover" class="album-display">
+  </div>
+
+ <div id="3093" class="content-section">
+  <h1>3093 EDITION</h1>
+  <div class="cover-wrapper">
+    <img src="FUTURECOVER.jpg" alt="3093 Album Cover" class="album-display">
+</div>
+
+</div>
+
+<script>
+// AUDIO PLAYER FUNCTIONALITY
+const audio = document.getElementById('audioPlayer');
+const playBtn = document.getElementById('playBtn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const playIcon = document.querySelector('.play-icon');
+const pauseIcon = document.querySelector('.pause-icon');
+const progressFill = document.querySelector('.progress-fill');
+const progressBar = document.querySelector('.progress-bar');
+const timeCurrent = document.querySelector('.time-current');
+const timeTotal = document.querySelector('.time-total');
+const currentTrackName = document.querySelector('.current-track-name');
+const trackItems = document.querySelectorAll('.track-item');
+
+// VOLUME CONTROLS
+const volumeBtn = document.getElementById('volumeBtn');
+const volumeBar = document.querySelector('.volume-bar');
+const volumeFill = document.querySelector('.volume-fill');
+const volumePercent = document.querySelector('.volume-percent');
+const volumeHigh = document.querySelector('.volume-high');
+const volumeLow = document.querySelector('.volume-low');
+const volumeMute = document.querySelector('.volume-mute');
+
+// REPEAT AND SHUFFLE CONTROLS
+const repeatBtn = document.getElementById('repeatBtn');
+const shuffleBtn = document.getElementById('shuffleBtn');
+const repeatOff = document.querySelector('.repeat-off');
+const repeatAll = document.querySelector('.repeat-all');
+const repeatOne = document.querySelector('.repeat-one');
+
+// PLAYER COVER AND LOGO
+const playerCoverImg = document.getElementById('playerCoverImg');
+const logoHomeBtn = document.getElementById('logoHomeBtn');
+
+let currentTrack = 0;
+let isPlaying = false;
+let currentVolume = 1; // Start at 100%
+let isMuted = false;
+let repeatMode = 'off'; // 'off', 'all', 'one'
+let isShuffleOn = false;
+let shuffledOrder = [];
+
+// TRACK DATA - AUTO-READ FROM HTML
+const tracks = Array.from(trackItems).map(item => ({
+  name: item.querySelector('.track-name').textContent,
+  src: item.getAttribute('data-src')
+}));
+
+// LOAD TRACK
+function loadTrack(index) {
+  currentTrack = index;
+  audio.src = tracks[index].src;
+  currentTrackName.textContent = tracks[index].name;
+  
+  // UPDATE ACTIVE STATE
+  trackItems.forEach((item, i) => {
+    if (i === index) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+
+// PLAY/PAUSE
+function togglePlay() {
+  if (isPlaying) {
+    audio.pause();
+  } else {
+    audio.play();
+  }
+}
+
+// PLAY NEXT
+function playNext() {
+  if (repeatMode === 'one') {
+    // Replay current track
+    audio.currentTime = 0;
+    audio.play();
+    return;
+  }
+  
+  if (isShuffleOn) {
+    // Play random track
+    let nextTrack;
+    do {
+      nextTrack = Math.floor(Math.random() * tracks.length);
+    } while (nextTrack === currentTrack && tracks.length > 1);
+    currentTrack = nextTrack;
+  } else {
+    // Normal next
+    currentTrack = (currentTrack + 1) % tracks.length;
+  }
+  
+  loadTrack(currentTrack);
+  audio.play();
+}
+
+// PLAY PREVIOUS
+function playPrev() {
+  if (isShuffleOn) {
+    // Play random track
+    let prevTrack;
+    do {
+      prevTrack = Math.floor(Math.random() * tracks.length);
+    } while (prevTrack === currentTrack && tracks.length > 1);
+    currentTrack = prevTrack;
+  } else {
+    // Normal previous
+    currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+  }
+  
+  loadTrack(currentTrack);
+  audio.play();
+}
+
+// TOGGLE REPEAT MODE
+function toggleRepeat() {
+  if (repeatMode === 'off') {
+    repeatMode = 'all';
+    repeatBtn.classList.add('active');
+    repeatBtn.setAttribute('title', 'Repeat All');
+    repeatOff.style.display = 'none';
+    repeatAll.style.display = 'block';
+    repeatOne.style.display = 'none';
+  } else if (repeatMode === 'all') {
+    repeatMode = 'one';
+    repeatBtn.setAttribute('title', 'Repeat One');
+    repeatOff.style.display = 'none';
+    repeatAll.style.display = 'none';
+    repeatOne.style.display = 'block';
+  } else {
+    repeatMode = 'off';
+    repeatBtn.classList.remove('active');
+    repeatBtn.setAttribute('title', 'Repeat Off');
+    repeatOff.style.display = 'block';
+    repeatAll.style.display = 'none';
+    repeatOne.style.display = 'none';
+  }
+}
+
+// TOGGLE SHUFFLE
+function toggleShuffle() {
+  isShuffleOn = !isShuffleOn;
+  if (isShuffleOn) {
+    shuffleBtn.classList.add('active');
+    shuffleBtn.setAttribute('title', 'Shuffle On');
+  } else {
+    shuffleBtn.classList.remove('active');
+    shuffleBtn.setAttribute('title', 'Shuffle Off');
+  }
+}
+
+// FORMAT TIME
+function formatTime(seconds) {
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+// UPDATE PROGRESS BAR
+function updateProgress() {
+  const percent = (audio.currentTime / audio.duration) * 100;
+  progressFill.style.width = `${percent}%`;
+  timeCurrent.textContent = formatTime(audio.currentTime);
+  timeTotal.textContent = formatTime(audio.duration || 0);
+}
+
+// UPDATE VOLUME DISPLAY
+function updateVolumeDisplay(volume) {
+  volumeFill.style.width = `${volume * 100}%`;
+  volumePercent.textContent = `${Math.round(volume * 100)}%`;
+  
+  // UPDATE ICON
+  volumeHigh.style.display = 'none';
+  volumeLow.style.display = 'none';
+  volumeMute.style.display = 'none';
+  
+  if (volume === 0) {
+    volumeMute.style.display = 'block';
+  } else if (volume < 0.5) {
+    volumeLow.style.display = 'block';
+  } else {
+    volumeHigh.style.display = 'block';
+  }
+}
+
+// SET VOLUME
+function setVolume(volume) {
+  audio.volume = volume;
+  currentVolume = volume;
+  isMuted = false;
+  updateVolumeDisplay(volume);
+}
+
+// TOGGLE MUTE
+function toggleMute() {
+  if (isMuted) {
+    audio.volume = currentVolume;
+    isMuted = false;
+    updateVolumeDisplay(currentVolume);
+  } else {
+    currentVolume = audio.volume;
+    audio.volume = 0;
+    isMuted = true;
+    updateVolumeDisplay(0);
+  }
+}
+
+// SEEK FUNCTIONALITY - CLICK & DRAG
+let isProgressSliding = false;
+
+function handleProgressChange(e) {
+  const rect = progressBar.getBoundingClientRect();
+  const percent = (e.clientX - rect.left) / rect.width;
+  audio.currentTime = percent * audio.duration;
+}
+
+progressBar.addEventListener('mousedown', (e) => {
+  isProgressSliding = true;
+  handleProgressChange(e);
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (isProgressSliding) {
+    handleProgressChange(e);
+  }
+});
+
+document.addEventListener('mouseup', () => {
+  isProgressSliding = false;
+});
+
+progressBar.addEventListener('click', handleProgressChange);
+
+// VOLUME SLIDER CLICK & DRAG
+let isVolumeSliding = false;
+
+function handleVolumeChange(e) {
+  const rect = volumeBar.getBoundingClientRect();
+  const percent = (e.clientX - rect.left) / rect.width;
+  setVolume(Math.max(0, Math.min(1, percent)));
+}
+
+volumeBar.addEventListener('mousedown', (e) => {
+  isVolumeSliding = true;
+  handleVolumeChange(e);
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (isVolumeSliding) {
+    handleVolumeChange(e);
+  }
+});
+
+document.addEventListener('mouseup', () => {
+  isVolumeSliding = false;
+});
+
+volumeBar.addEventListener('click', handleVolumeChange);
+
+// VOLUME BUTTON CLICK (MUTE/UNMUTE)
+volumeBtn.addEventListener('click', toggleMute);
+
+// EVENT LISTENERS
+playBtn.addEventListener('click', togglePlay);
+prevBtn.addEventListener('click', playPrev);
+nextBtn.addEventListener('click', playNext);
+repeatBtn.addEventListener('click', toggleRepeat);
+shuffleBtn.addEventListener('click', toggleShuffle);
+
+audio.addEventListener('play', () => {
+  isPlaying = true;
+  playIcon.style.display = 'none';
+  pauseIcon.style.display = 'block';
+});
+
+audio.addEventListener('pause', () => {
+  isPlaying = false;
+  playIcon.style.display = 'block';
+  pauseIcon.style.display = 'none';
+});
+
+audio.addEventListener('timeupdate', updateProgress);
+
+audio.addEventListener('ended', () => {
+  if (repeatMode === 'one') {
+    audio.currentTime = 0;
+    audio.play();
+  } else if (repeatMode === 'all' || isShuffleOn) {
+    playNext();
+  } else {
+    // Only play next if not the last track
+    if (currentTrack < tracks.length - 1) {
+      playNext();
+    } else {
+      // Stop at end of album
+      isPlaying = false;
+      playIcon.style.display = 'block';
+      pauseIcon.style.display = 'none';
+    }
+  }
+});
+
+// TRACK ITEM CLICKS
+trackItems.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    loadTrack(index);
+    audio.play();
+  });
+});
+
+// PLAYER COVER CLICK (TOGGLE PLAY/PAUSE)
+playerCoverImg.addEventListener('click', () => {
+  togglePlay();
+  // Add smooth pulse animation
+  playerCoverImg.style.transform = 'scale(0.95)';
+  setTimeout(() => {
+    playerCoverImg.style.transform = 'scale(1)';
+  }, 150);
+});
+
+// LOGO HOME BUTTON (GO HOME & STOP MUSIC)
+logoHomeBtn.addEventListener('click', () => {
+  // Stop the music
+  audio.pause();
+  audio.currentTime = 0;
+  isPlaying = false;
+  playIcon.style.display = 'block';
+  pauseIcon.style.display = 'none';
+  
+  // Reset to first track
+  currentTrackName.textContent = 'SELECT A TRACK';
+  
+  // Remove active state from all tracks
+  trackItems.forEach(item => item.classList.remove('active'));
+});
+
+// INITIALIZE
+loadTrack(0);
+setVolume(1); // Set to 100% on start
+</script>
+
+</body>
+</html>
