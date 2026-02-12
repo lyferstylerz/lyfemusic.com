@@ -517,15 +517,17 @@ function toggleMute() {
   }
 }
 
-// SEEK FUNCTIONALITY - CLICK & DRAG
+// SEEK FUNCTIONALITY - CLICK & DRAG (Desktop + Mobile Touch)
 let isProgressSliding = false;
 
 function handleProgressChange(e) {
   const rect = progressBar.getBoundingClientRect();
-  const percent = (e.clientX - rect.left) / rect.width;
+  const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+  const percent = (clientX - rect.left) / rect.width;
   audio.currentTime = percent * audio.duration;
 }
 
+// Desktop events
 progressBar.addEventListener('mousedown', (e) => {
   isProgressSliding = true;
   handleProgressChange(e);
@@ -543,15 +545,34 @@ document.addEventListener('mouseup', () => {
 
 progressBar.addEventListener('click', handleProgressChange);
 
-// VOLUME SLIDER CLICK & DRAG
+// Mobile touch events
+progressBar.addEventListener('touchstart', (e) => {
+  isProgressSliding = true;
+  handleProgressChange(e);
+  e.preventDefault();
+});
+
+document.addEventListener('touchmove', (e) => {
+  if (isProgressSliding) {
+    handleProgressChange(e);
+  }
+});
+
+document.addEventListener('touchend', () => {
+  isProgressSliding = false;
+});
+
+// VOLUME SLIDER CLICK & DRAG (Desktop + Mobile Touch)
 let isVolumeSliding = false;
 
 function handleVolumeChange(e) {
   const rect = volumeBar.getBoundingClientRect();
-  const percent = (e.clientX - rect.left) / rect.width;
+  const clientX = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+  const percent = (clientX - rect.left) / rect.width;
   setVolume(Math.max(0, Math.min(1, percent)));
 }
 
+// Desktop events
 volumeBar.addEventListener('mousedown', (e) => {
   isVolumeSliding = true;
   handleVolumeChange(e);
@@ -568,6 +589,23 @@ document.addEventListener('mouseup', () => {
 });
 
 volumeBar.addEventListener('click', handleVolumeChange);
+
+// Mobile touch events
+volumeBar.addEventListener('touchstart', (e) => {
+  isVolumeSliding = true;
+  handleVolumeChange(e);
+  e.preventDefault();
+});
+
+document.addEventListener('touchmove', (e) => {
+  if (isVolumeSliding) {
+    handleVolumeChange(e);
+  }
+});
+
+document.addEventListener('touchend', () => {
+  isVolumeSliding = false;
+});
 
 // VOLUME BUTTON CLICK (MUTE/UNMUTE)
 volumeBtn.addEventListener('click', toggleMute);
